@@ -1,4 +1,4 @@
-package uk.ac.westminster.productsapi;
+package uk.ac.westminster.products_api;
 
 public class Product {
     public Long id;
