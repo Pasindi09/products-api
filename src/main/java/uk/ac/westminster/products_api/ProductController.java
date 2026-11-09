@@ -14,7 +14,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping
-    public List<Product> getAllProducts () {
+    public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
 
@@ -25,12 +25,12 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product addProduct(@RequestBody Product product) {
+    public Product addProduct(@RequestBody DigitalProduct product) {
         return productService.addProduct(product);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteProduct (@PathVariable Long id) {
+    public void deleteProduct(@PathVariable Long id) {
         productService.deleteProduct(id);
     }
 
@@ -39,4 +39,8 @@ public class ProductController {
         return productService.findByName(name);
     }
 
+    @GetMapping("/summaries")
+    public List<String> getAllSummaries() {
+        return productService.getAllSummaries();
+    }
 }
